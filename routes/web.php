@@ -20,6 +20,12 @@ Route::get('/login', [LoginController::class,'index'] )->name('login')->middlewa
 Route::post('/login', [LoginController::class,'login'] )->name('admin.login.submit');
 Route::post('/logout', [LoginController::class,'logout'])->name('logout');
 
+Route::post('/add', [DashboardController::class,'addumkm'] )->name('add.umkm');
+ Route::post('/update', [DashboardController::class,'update'] )->name('update.umkm');
+
 Route::get('/', [DashboardController::class,'index'] )->name('home')->middleware('auth');
+Route::get('/tambahumkm', [DashboardController::class,'add'] )->name('tambah')->middleware('auth');
+Route::get('editdata/{id}', [DashboardController::class,'editview'] )->name('editdata')->middleware('auth');
+
 
 Route::get('/verify/{token}', [RegisterController::class,'verif'] )->name('verify');
