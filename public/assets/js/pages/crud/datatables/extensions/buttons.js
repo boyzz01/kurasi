@@ -107,7 +107,7 @@
 						extend : 'print',
 						title: 'Daftar UMKM Sumatera Utara',
 						exportOptions: {
-							columns: [ 0, 1, 2, 3 , 4 , 5 , 6  ]
+							columns: [ 0, 1, 2, 3 , 4 , 5 , 6 , 7 ]
 						}
 						// 'copyHtml5',
 						// 'excelHtml5',
@@ -118,28 +118,28 @@
 						extend : 'copyHtml5',
 						title: 'Daftar UMKM Sumatera Utara',
 						exportOptions: {
-							columns: [ 0, 1, 2, 3 , 4 , 5 , 6  ]
+							columns: [ 0, 1, 2, 3 , 4 , 5 , 6 , 7 ]
 						}
 					},
 					{
 						extend : 'excelHtml5',
 						title: 'Daftar UMKM Sumatera Utara',
 						exportOptions: {
-							columns: [ 0, 1, 2, 3 , 4 , 5 , 6  ]
+							columns: [ 0, 1, 2, 3 , 4 , 5 , 6 , 7 ]
 						}
 					},
 					{
 						extend : 'csvHtml5',
 						title: 'Daftar UMKM Sumatera Utara',
 						exportOptions: {
-							columns: [ 0, 1, 2, 3 , 4 , 5 , 6  ]
+							columns: [ 0, 1, 2, 3 , 4 , 5 , 6 , 7 ]
 						}
 					},
 					{
 						extend : 'pdfHtml5',
 						title: 'Daftar UMKM Sumatera Utara',
 						exportOptions: {
-							columns: [ 0, 1, 2, 3 , 4 , 5 , 6  ]
+							columns: [ 0, 1, 2, 3 , 4 , 5 , 6 , 7 ]
 						}
 					},
 					'colvis'

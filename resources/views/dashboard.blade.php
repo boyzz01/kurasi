@@ -229,6 +229,8 @@
                                 <th>Alamat UMKM</th>
                                 <th>Jenis Produk</th>
                                 <th>Status</th>
+                                <th>Catatan</th>
+
                                 <th>Aksi</th>
 
 
@@ -262,6 +264,7 @@
                                         @endif
 
                                     </td>
+                                    <td>{{ $d->catatan }}</td>
                                     <td nowrap="nowrap">
                                         <a href="{{ route('detail', $d->id) }}" class="btn btn-sm btn-primary btn-icon"
                                             id="{{ $d->id }}" title=" Detail Data ">

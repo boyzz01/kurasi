@@ -129,32 +129,28 @@ class DashboardController extends Controller
           
             if ($request->file('filenib') != null) {
                 $ttd = $request->file('filenib')->store("berkas");
-                $url = config('app.url');
                 $image = asset('storage/'.$ttd);
                 $request['file_nib'] = $image;
             }
 
             if ($request->file('filepirt') != null) {
                 $ttd = $request->file('filepirt')->store("berkas");
-                $url = config('app.url');
-                $image = $url . "storage/app/" . $ttd;
     
+                $image = asset('storage/'.$ttd);
                 $request['file_pirt'] = $image;
               
             }
     
             if ($request->file('filehalal') != null) {
                 $ttd = $request->file('filehalal')->store("berkas");
-                $url = config('app.url');
-                $image = $url . "storage/app/" . $ttd;
+                $image = asset('storage/'.$ttd);
                 $request['file_halal'] = $image;
            
             }
     
             if ($request->file('filebpom') != null) {
                 $ttd = $request->file('filebpom')->store("berkas");
-                $url = config('app.url');
-                $image = $url . "storage/app/" . $ttd;
+                $image = asset('storage/'.$ttd);
                 $request['file_bpom'] = $image;
             }
     

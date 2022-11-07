@@ -124,8 +124,12 @@
                                     <span class="text-danger">*</span></label>
                                 <br>
 
-                                <a href="<?php echo e($umkm->file_nib); ?>" target="_blank">Lihat Sertifikat
-                                    NIB</a>
+                                <?php if($umkm->file_nib == null): ?>
+                                    <span class="text-danger">Sertifikat NIB Tidak Tersedia</span>
+                                <?php else: ?>
+                                    <a href="<?php echo e($umkm->file_nib); ?>" target="_blank">Lihat Sertifikat
+                                        NIB</a>
+                                <?php endif; ?>
 
                             </div>
                             <div class="col-sm-4">
@@ -185,9 +189,14 @@
 
                                     <span class="text-danger"></span></label>
                                 <br>
+                                <?php if($umkm->file_halal == null): ?>
+                                    <span class="text-danger">Sertifikat
+                                        Halal Tidak Tersedia</span>
+                                <?php else: ?>
+                                    <a href="<?php echo e($umkm->file_halal); ?>" target="_blank">Lihat Sertifikat
+                                        Halal</a>
+                                <?php endif; ?>
 
-                                <a href="<?php echo e($umkm->file_halal); ?>" target="_blank">Lihat Sertifikat
-                                    Halal</a>
                             </div>
                             <div class="col-sm-4">
                                 <label>Berlaku Sampai
@@ -209,9 +218,14 @@
 
                                     <span class="text-danger"></span></label>
                                 <br>
+                                <?php if($umkm->file_bpom == null): ?>
+                                    <span class="text-danger">Sertifikat
+                                        BPOM Tidak Tersedia</span>
+                                <?php else: ?>
+                                    <a href="<?php echo e($umkm->file_bpom); ?>" target="_blank">Lihat Sertifikat
+                                        BPOM</a>
+                                <?php endif; ?>
 
-                                <a href="<?php echo e($umkm->file_bpom); ?>" target="_blank">Lihat Sertifikat
-                                    BPOM</a>
                             </div>
                             <div class="col-sm-4">
                                 <label>Berlaku Sampai
@@ -234,9 +248,14 @@
 
                                     <span class="text-danger"></span></label>
                                 <br>
+                                <?php if($umkm->file_pirt == null): ?>
+                                    <span class="text-danger">Sertifikat
+                                        PIRT Tidak Tersedia</span>
+                                <?php else: ?>
+                                    <a href="<?php echo e($umkm->file_pirt); ?>" target="_blank">Lihat Sertifikat
+                                        PIRT</a>
+                                <?php endif; ?>
 
-                                <a href="<?php echo e($umkm->file_pirt); ?>" target="_blank">Lihat Sertifikat
-                                    PIRT</a>
                             </div>
                             <div class="col-sm-4">
                                 <label>Berlaku Sampai
@@ -273,9 +292,14 @@
 
                                     <span class="text-danger"></span></label>
                                 <br>
+                                <?php if($umkm->file_haki == null): ?>
+                                    <span class="text-danger">Sertifikat
+                                        HAKI Tidak Tersedia</span>
+                                <?php else: ?>
+                                    <a href="<?php echo e($umkm->file_haki); ?>" target="_blank">Lihat Sertifikat
+                                        HAKI</a>
+                                <?php endif; ?>
 
-                                <a href="<?php echo e($umkm->file_haki); ?>" target="_blank">Lihat Sertifikat
-                                    HAKI</a>
                             </div>
                             <div class="col-sm-6">
                                 <label>Berlaku Sampai

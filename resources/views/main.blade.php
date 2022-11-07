@@ -161,7 +161,7 @@
                                     id="kt_quick_user_toggle" style="">
                                     <span
                                         class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,
-                                        Admin
+                                        {{ Auth::guard()->user()->name }}
                                     </span>
                                     <span
                                         class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3"></span>
@@ -388,7 +388,7 @@
                 ]
             });
 
-            //  cek();
+            cek();
 
             $('#jenis_produk').on('change', function() {
 

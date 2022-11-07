@@ -231,6 +231,8 @@
                                 <th>Alamat UMKM</th>
                                 <th>Jenis Produk</th>
                                 <th>Status</th>
+                                <th>Catatan</th>
+
                                 <th>Aksi</th>
 
 
@@ -264,6 +266,7 @@
                                         <?php endif; ?>
 
                                     </td>
+                                    <td><?php echo e($d->catatan); ?></td>
                                     <td nowrap="nowrap">
                                         <a href="<?php echo e(route('detail', $d->id)); ?>" class="btn btn-sm btn-primary btn-icon"
                                             id="<?php echo e($d->id); ?>" title=" Detail Data ">
