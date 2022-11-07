@@ -125,44 +125,42 @@ class DashboardController extends Controller
 
     public function update(Request $request){
 
-        echo $request->id;
         //    echo $request->file('filenib');
           
-        //     if ($request->file('filenib') != null) {
-        //         $ttd = $request->file('filenib')->store("berkas");
-        //         $url = config('app.url');
-        //         $image = asset('storage/'.$ttd);
-        //         $request['file_nib'] = $image;
-        //     }
+            if ($request->file('filenib') != null) {
+                $ttd = $request->file('filenib')->store("berkas");
+                $url = config('app.url');
+                $image = asset('storage/'.$ttd);
+                $request['file_nib'] = $image;
+            }
 
-        //     if ($request->file('filepirt') != null) {
-        //         $ttd = $request->file('filepirt')->store("berkas");
-        //         $url = config('app.url');
-        //         $image = $url . "storage/app/" . $ttd;
+            if ($request->file('filepirt') != null) {
+                $ttd = $request->file('filepirt')->store("berkas");
+                $url = config('app.url');
+                $image = $url . "storage/app/" . $ttd;
     
-        //         $request['file_pirt'] = $image;
+                $request['file_pirt'] = $image;
               
-        //     }
+            }
     
-        //     if ($request->file('filehalal') != null) {
-        //         $ttd = $request->file('filehalal')->store("berkas");
-        //         $url = config('app.url');
-        //         $image = $url . "storage/app/" . $ttd;
-        //         $request['file_halal'] = $image;
+            if ($request->file('filehalal') != null) {
+                $ttd = $request->file('filehalal')->store("berkas");
+                $url = config('app.url');
+                $image = $url . "storage/app/" . $ttd;
+                $request['file_halal'] = $image;
            
-        //     }
+            }
     
-        //     if ($request->file('filebpom') != null) {
-        //         $ttd = $request->file('filebpom')->store("berkas");
-        //         $url = config('app.url');
-        //         $image = $url . "storage/app/" . $ttd;
-        //         $request['file_bpom'] = $image;
-        //     }
+            if ($request->file('filebpom') != null) {
+                $ttd = $request->file('filebpom')->store("berkas");
+                $url = config('app.url');
+                $image = $url . "storage/app/" . $ttd;
+                $request['file_bpom'] = $image;
+            }
     
-        //      $matchThese = ['id' => $request->id];
-        //      Umkm::updateOrCreate($matchThese, $request->all());
-        
-        //    Umkm::create($request->all());
-        //     return redirect()->back()->with('success', 'Data berhasil diupdate');
+             $matchThese = ['id' => $request->id];
+             Umkm::updateOrCreate($matchThese, $request->all());
+    
+            return redirect()->back()->with('success', 'Data berhasil diupdate');
         }
 }
