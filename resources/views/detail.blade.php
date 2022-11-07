@@ -123,8 +123,12 @@
                                     <span class="text-danger">*</span></label>
                                 <br>
 
-                                <a href="{{ $umkm->file_nib }}" target="_blank">Lihat Sertifikat
-                                    NIB</a>
+                                @if ($umkm->file_nib == null)
+                                    <span class="text-danger">Sertifikat NIB Tidak Tersedia</span>
+                                @else
+                                    <a href="{{ $umkm->file_nib }}" target="_blank">Lihat Sertifikat
+                                        NIB</a>
+                                @endif
 
                             </div>
                             <div class="col-sm-4">

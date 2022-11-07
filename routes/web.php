@@ -21,8 +21,8 @@ Route::get('/login', [LoginController::class,'index'] )->name('login')->middlewa
 Route::post('/login', [LoginController::class,'login'] )->name('admin.login.submit');
 Route::get('/logout', [LoginController::class,'logout'])->name('logout');
 
-Route::post('/add', [DashboardController::class,'addumkm'] )->name('add.umkm');
- Route::post('/update', [DashboardController::class,'update'] )->name('update.umkm');
+Route::post('/add', [DashboardController::class,'addumkm'] )->name('add.umkm')->middleware('auth');
+ Route::post('/update', [DashboardController::class,'update'] )->name('update.umkm')->middleware('auth');
 
 Route::get('/', [DashboardController::class,'index'] )->name('home')->middleware('auth');
 Route::get('/tambahumkm', [DashboardController::class,'add'] )->name('tambah')->middleware('auth');
