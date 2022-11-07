@@ -105,9 +105,9 @@
 				buttons: [
 					{
 						extend : 'print',
-						title: 'Data Anggota Karang Taruna Kota Medan',
+						title: 'Daftar UMKM Sumatera Utara',
 						exportOptions: {
-							columns: [ 0, 1, 2, 3 , 4 , 5 , 6 , 7 ]
+							columns: [ 0, 1, 2, 3 , 4 , 5 , 6  ]
 						}
 						// 'copyHtml5',
 						// 'excelHtml5',
@@ -116,30 +116,30 @@
 					},
 					{
 						extend : 'copyHtml5',
-						title: 'Data Anggota Karang Taruna Kota Medan',
+						title: 'Daftar UMKM Sumatera Utara',
 						exportOptions: {
-							columns: [ 0, 1, 2, 3 , 4 , 5 , 6 , 7 ]
+							columns: [ 0, 1, 2, 3 , 4 , 5 , 6  ]
 						}
 					},
 					{
 						extend : 'excelHtml5',
-						title: 'Data Anggota Karang Taruna Kota Medan',
+						title: 'Daftar UMKM Sumatera Utara',
 						exportOptions: {
-							columns: [ 0, 1, 2, 3 , 4 , 5 , 6 , 7 ]
+							columns: [ 0, 1, 2, 3 , 4 , 5 , 6  ]
 						}
 					},
 					{
 						extend : 'csvHtml5',
-						title: 'Data Anggota Karang Taruna Kota Medan',
+						title: 'Daftar UMKM Sumatera Utara',
 						exportOptions: {
-							columns: [ 0, 1, 2, 3 , 4 , 5 , 6 , 7 ]
+							columns: [ 0, 1, 2, 3 , 4 , 5 , 6  ]
 						}
 					},
 					{
 						extend : 'pdfHtml5',
-						title: 'Data Anggota Karang Taruna Kota Medan',
+						title: 'Daftar UMKM Sumatera Utara',
 						exportOptions: {
-							columns: [ 0, 1, 2, 3 , 4 , 5 , 6 , 7 ]
+							columns: [ 0, 1, 2, 3 , 4 , 5 , 6  ]
 						}
 					},
 					'colvis'
