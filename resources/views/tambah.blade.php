@@ -118,7 +118,7 @@
                                 <label>Berlaku Sampai
                                     <span class="text-danger"></span></label>
                                 <input type="date" name="tgl_nib" class="form-control" id="tgl_nib" value=""
-                                    placeholder="No. Sertifikat Halal">
+                                    placeholder="" required>
                             </div>
                         </div>
 

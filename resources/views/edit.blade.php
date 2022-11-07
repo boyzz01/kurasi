@@ -128,7 +128,7 @@
                                 <label>Berlaku Sampai
                                     <span class="text-danger"></span></label>
                                 <input type="date" name="tgl_nib" class="form-control" id="tgl_nib"
-                                    value="{{ $umkm->tgl_nib }}" placeholder="No. Sertifikat Halal">
+                                    value="{{ $umkm->tgl_nib }}" placeholder="No. Sertifikat Halal" required>
                             </div>
                         </div>
 
