@@ -61,14 +61,9 @@ class DashboardController extends Controller
 
     
     public function detail($id){
-        if (Auth::guard()->user()->level == 1)
-        {
-            $jenis = DB::table('ms_jenis')->get();
-            $umkm = DB::table("umkm")->where('id',$id)->first();
-            return view('detail',['jenis'=>$jenis,'umkm'=>$umkm]);
-        }else{
-            return redirect()->route('home');
-        }
+        $jenis = DB::table('ms_jenis')->get();
+        $umkm = DB::table("umkm")->where('id',$id)->first();
+        return view('detail',['jenis'=>$jenis,'umkm'=>$umkm]);
 
      //   echo asset('storage/app/5/yoOPOR8scE8BNIjAwDCt0YxDeDxDWBMaz4SxFkOr.txt');
     }

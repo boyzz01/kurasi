@@ -77,8 +77,7 @@
                 </div>
                 <div class="col-xl-6">
                     <!--begin::Stats Widget 15-->
-                    <a href="{{ url('/') }}/admin/customer"
-                        class="card card-custom bg-success bg-hover-state-success card-stretch gutter-b">
+                    <a class="card card-custom bg-success bg-hover-state-success card-stretch gutter-b">
                         <!--begin::Body-->
                         <div class="card-body">
                             <span class="svg-icon svg-icon-white svg-icon-3x ml-n1">
@@ -99,7 +98,7 @@
 
                 <div class="col-xl-6">
                     <!--begin::Stats Widget 15-->
-                    <a href="#" class="card card-custom bg-info bg-hover-state-info card-stretch gutter-b">
+                    <a class="card card-custom bg-info bg-hover-state-info card-stretch gutter-b">
                         <!--begin::Body-->
                         <div class="card-body">
                             <span class="svg-icon svg-icon-white svg-icon-3x ml-n1">
@@ -264,14 +263,11 @@
 
                                     </td>
                                     <td nowrap="nowrap">
-
+                                        <a href="{{ route('detail', $d->id) }}" class="btn btn-sm btn-primary btn-icon"
+                                            id="{{ $d->id }}" title=" Detail Data ">
+                                            <i class="flaticon-file-2"></i>
+                                        </a>
                                         @if (Auth::guard()->user()->level == 1)
-                                            <a href="{{ route('detail', $d->id) }}"
-                                                class="btn btn-sm btn-primary btn-icon" id="{{ $d->id }}"
-                                                title=" Detail Data ">
-                                                <i class="flaticon-file-2"></i>
-                                            </a>
-
                                             <a class="btn btn-sm btn-success btn-icon terima_btn"
                                                 id="{{ $d->id }}" title=" Edit Data ">
                                                 <i class=" fas fa-check-circle"></i>

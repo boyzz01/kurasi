@@ -79,8 +79,7 @@
                 </div>
                 <div class="col-xl-6">
                     <!--begin::Stats Widget 15-->
-                    <a href="<?php echo e(url('/')); ?>/admin/customer"
-                        class="card card-custom bg-success bg-hover-state-success card-stretch gutter-b">
+                    <a class="card card-custom bg-success bg-hover-state-success card-stretch gutter-b">
                         <!--begin::Body-->
                         <div class="card-body">
                             <span class="svg-icon svg-icon-white svg-icon-3x ml-n1">
@@ -101,7 +100,7 @@
 
                 <div class="col-xl-6">
                     <!--begin::Stats Widget 15-->
-                    <a href="#" class="card card-custom bg-info bg-hover-state-info card-stretch gutter-b">
+                    <a class="card card-custom bg-info bg-hover-state-info card-stretch gutter-b">
                         <!--begin::Body-->
                         <div class="card-body">
                             <span class="svg-icon svg-icon-white svg-icon-3x ml-n1">
@@ -266,14 +265,11 @@
 
                                     </td>
                                     <td nowrap="nowrap">
-
+                                        <a href="<?php echo e(route('detail', $d->id)); ?>" class="btn btn-sm btn-primary btn-icon"
+                                            id="<?php echo e($d->id); ?>" title=" Detail Data ">
+                                            <i class="flaticon-file-2"></i>
+                                        </a>
                                         <?php if(Auth::guard()->user()->level == 1): ?>
-                                            <a href="<?php echo e(route('detail', $d->id)); ?>"
-                                                class="btn btn-sm btn-primary btn-icon" id="<?php echo e($d->id); ?>"
-                                                title=" Detail Data ">
-                                                <i class="flaticon-file-2"></i>
-                                            </a>
-
                                             <a class="btn btn-sm btn-success btn-icon terima_btn"
                                                 id="<?php echo e($d->id); ?>" title=" Edit Data ">
                                                 <i class=" fas fa-check-circle"></i>
