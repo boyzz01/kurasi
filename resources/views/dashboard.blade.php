@@ -251,7 +251,7 @@
                                         @if ($d->status == 0)
                                             <span
                                                 class="label label-lg font-weight-bold label-light-primary label-inline">Belum
-                                                Terverifikasi</span>
+                                                Diperiksa</span>
                                         @elseif ($d->status == 1)
                                             <span
                                                 class="label label-lg font-weight-bold label-light-success label-inline">Terverifikasi</span>

@@ -5,7 +5,7 @@
         <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
             <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
                 <div class="d-flex align-items-center flex-wrap mr-2">
-                    <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Edit UMKM</h5>
+                    <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Detail UMKM</h5>
                 </div>
 
             </div>
@@ -20,7 +20,7 @@
                 <div class="card card-custom">
                     <div class="card-header flex-wrap py-5">
                         <div class="card-title">
-                            <h3 class="card-label">Edit UMKM
+                            <h3 class="card-label">Detail UMKM
                                 <span class="text-muted pt-2 font-size-sm d-block"></span>
                             </h3>
                         </div>
