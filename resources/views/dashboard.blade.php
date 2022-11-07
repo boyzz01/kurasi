@@ -12,7 +12,69 @@
         </div>
         <div class="container-fluid">
 
+
+
             <div class="row">
+
+                <div class="modal fade" id="tolakModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Alasan Penolakan</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i aria-hidden="true" class="ki ki-close"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <form method="POST" action="{{ route('tolak.umkm') }}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" id="idumkm" name="idumkm">
+                                    <textarea class="form-control" required name="catatan" id="catatan" placeholder="Alasan Penolakan"></textarea>
+
+
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Tutup</button>
+                                <button type="Submit" name="Submit" class="btn btn-primary">Tolak Verifikasi</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="terimaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Catatan</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <i aria-hidden="true" class="ki ki-close"></i>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+
+                                <form method="POST" action="{{ route('terima.umkm') }}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" id="idterima" name="idterima">
+                                    <textarea class="form-control" required name="catatan" id="catatan" placeholder="Catatan"></textarea>
+
+
+
+
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Tutup</button>
+                                <button type="Submit" name="Submit" class="btn btn-primary">Verifikasi</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <div class="col-xl-6">
                     <!--begin::Stats Widget 15-->
                     <a href="{{ url('/') }}/admin/customer"
@@ -25,7 +87,7 @@
                                 <!--end::Svg Icon-->
                             </span>
                             <div class="text-inverse-success font-weight-bolder font-size-h5 mb-2 mt-5">
-                                {{ count($data) }}</div>
+                                {{ count($umkm) }}</div>
                             <div class="font-weight-bold text-inverse-success font-size-sm">Total
                                 UMKM Terdaftar</div>
                         </div>
@@ -46,7 +108,7 @@
                                 <!--end::Svg Icon-->
                             </span>
                             <div class="text-inverse-success font-weight-bolder font-size-h5 mb-2 mt-5">
-                                {{ count($umkm) }}</div>
+                                {{ count($verif) }}</div>
                             <div class="font-weight-bold text-inverse-success font-size-sm">Total
                                 UMKM Terverifikasi</div>
                         </div>
@@ -142,10 +204,12 @@
                             </div>
                             <!--end::Dropdown Menu-->
                         </div>
-                        <a href="{{ route('tambah') }}" <button type="button" class="btn btn-primary"
-                            style="margin-right: 20px;" data-target="#exampleModal">
-                            Tambah UMKM
-                            </button></a>
+                        @if (Auth::guard()->user()->level == 2)
+                            <a href="{{ route('tambah') }}" <button type="button" class="btn btn-primary"
+                                style="margin-right: 20px;" data-target="#exampleModal">
+                                Tambah UMKM
+                                </button></a>
+                        @endif
 
 
                         <!--end::Button-->
@@ -186,32 +250,44 @@
                                     <td>
                                         @if ($d->status == 0)
                                             <span
-                                                class="label label-lg font-weight-bold label-light-danger label-inline">Belum
+                                                class="label label-lg font-weight-bold label-light-primary label-inline">Belum
                                                 Terverifikasi</span>
+                                        @elseif ($d->status == 1)
+                                            <span
+                                                class="label label-lg font-weight-bold label-light-success label-inline">Terverifikasi</span>
                                         @else
                                             <span
-                                                class="label label-lg font-weight-bold label-light-primary label-inline">Terverifikasi</span>
+                                                class="label label-lg font-weight-bold label-light-danger label-inline">Ditolak</span>
                                         @endif
 
                                     </td>
                                     <td nowrap="nowrap">
 
-                                        {{-- <a href="javascript:;" class="btn btn-sm btn-success btn-icon edit_btn"
-                                            id="{{ $d->id }}" title=" Edit Data ">
-                                            <i class="
-                                        fas fa-check-circle"></i> --}}
-                                        </a>
-                                        <a href="{{ route('editdata', $d->id) }}"
-                                            class="btn btn-sm btn-info btn-icon edit_btn" id="{{ $d->id }}"
-                                            title=" Edit Data ">
-                                            <i class="la la-edit"></i>
-                                        </a>
+                                        @if (Auth::guard()->user()->level == 1)
+                                            <a class="btn btn-sm btn-success btn-icon terima_btn"
+                                                id="{{ $d->id }}" title=" Edit Data ">
+                                                <i class=" fas fa-check-circle"></i>
+                                            </a>
 
-                                        <button type="submit" class="btn btn-sm btn-danger btn-icon" title="Delete"
-                                            onclick="return confirm('Are you sure want to delete this data?')"><i
-                                                class="la la-trash">
-                                            </i>
-                                        </button>
+                                            <a class="btn btn-sm btn-danger btn-icon tolak_btn" id="{{ $d->id }}"
+                                                title=" Edit Data ">
+                                                <i class="fas fa-window-close"></i>
+                                            </a>
+                                        @endif
+
+                                        @if (Auth::guard()->user()->level == 2)
+                                            <a href="{{ route('editdata', $d->id) }}"
+                                                class="btn btn-sm btn-info btn-icon edit_btn" id="{{ $d->id }}"
+                                                title=" Edit Data ">
+                                                <i class="la la-edit"></i>
+                                            </a>
+
+                                            <button type="submit" class="btn btn-sm btn-danger btn-icon" title="Delete"
+                                                onclick="return confirm('Are you sure want to delete this data?')"><i
+                                                    class="la la-trash">
+                                                </i>
+                                            </button>
+                                        @endif
 
                                     </td>
 

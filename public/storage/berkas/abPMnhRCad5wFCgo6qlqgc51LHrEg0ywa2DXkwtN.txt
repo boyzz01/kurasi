@@ -1,0 +1,541 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Nov 01, 2022 at 06:29 AM
+-- Server version: 10.5.13-MariaDB-cll-lve
+-- PHP Version: 7.2.34
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `u559870473_taruna`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `password` text NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `username`, `password`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin', '$2y$10$LXkREGkaRvgAM/3atDcq7uFC8YSa/32bOzqCC5.Tp8aTf4JO5KTku', '2022-06-03', '2022-06-03');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `anggota`
+--
+
+CREATE TABLE `anggota` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `kta` text NOT NULL,
+  `email` text NOT NULL,
+  `nama` text NOT NULL,
+  `nik` text NOT NULL,
+  `ttl` text NOT NULL,
+  `agama` text NOT NULL,
+  `jenis_kelamin` text NOT NULL,
+  `pekerjaan` text NOT NULL,
+  `pendidikan` text NOT NULL,
+  `alamat` text NOT NULL,
+  `kode_kecamatan` text NOT NULL,
+  `kecamatan` text NOT NULL,
+  `kelurahan` text NOT NULL,
+  `lingkungan` text NOT NULL,
+  `no_hp` text NOT NULL,
+  `tingkat` text NOT NULL,
+  `jabatan` text NOT NULL,
+  `jabatan_provinsi` text DEFAULT NULL,
+  `jabatan_kota` text DEFAULT NULL,
+  `jabatan_kecamatan` text DEFAULT NULL,
+  `jabatan_kelurahan` text DEFAULT NULL,
+  `ktp` text NOT NULL,
+  `ttd` text NOT NULL,
+  `foto` text NOT NULL,
+  `updated_at` date NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `counter`
+--
+
+CREATE TABLE `counter` (
+  `id` int(11) NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `counter`
+--
+
+INSERT INTO `counter` (`id`, `name`, `value`) VALUES
+(1, 'kta', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ms_jenis`
+--
+
+CREATE TABLE `ms_jenis` (
+  `id` int(11) NOT NULL,
+  `nama` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ms_jenis`
+--
+
+INSERT INTO `ms_jenis` (`id`, `nama`) VALUES
+(1, 'Kain, Ulos & Songket'),
+(2, 'Kerajinan Tangan'),
+(3, 'Makanan Ringan'),
+(4, 'Pakaian'),
+(5, 'Perawatan & Kecantikan'),
+(6, 'Pesona Rempah'),
+(7, 'Sepatu/Sendal'),
+(8, 'Tas');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ms_kategori`
+--
+
+CREATE TABLE `ms_kategori` (
+  `id` int(11) NOT NULL,
+  `nama` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ms_kategori`
+--
+
+INSERT INTO `ms_kategori` (`id`, `nama`) VALUES
+(1, 'Alat Perlengkapan Rumah'),
+(2, 'Produk Ibu Dan Bayi'),
+(3, 'Produk Kecantikan'),
+(4, 'Pakaian'),
+(5, 'Makanan'),
+(6, 'Perlengkapan Kesehatan'),
+(7, 'Hobi'),
+(8, 'Perlengkapan Dapur'),
+(9, 'Handphone Dan Aksesoris'),
+(10, 'Peralatan Olahraga'),
+(11, 'Perlengkapan Elektronik'),
+(12, 'Perangkat Laptop Atau Komputer'),
+(13, 'Lainnya');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ms_kecamatan`
+--
+
+CREATE TABLE `ms_kecamatan` (
+  `id` int(11) NOT NULL,
+  `kode` varchar(2) NOT NULL,
+  `nama` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `ms_kecamatan`
+--
+
+INSERT INTO `ms_kecamatan` (`id`, `kode`, `nama`) VALUES
+(1, '01', 'Medan Kota'),
+(2, '02', 'Medan Sunggal'),
+(3, '03', 'Medan Helvetia'),
+(4, '04', 'Medan Denai'),
+(5, '05', 'Medan Barat'),
+(6, '06', 'Medan Deli'),
+(7, '07', 'Medan Tuntungan'),
+(8, '08', 'Medan Belawan'),
+(9, '09', 'Medan Amplas'),
+(10, '10', 'Medan Area'),
+(11, '11', 'Medan Johor'),
+(12, '12', 'Medan Marelan'),
+(13, '13', 'Medan Labuhan'),
+(14, '14', 'Medan Tembung'),
+(15, '15', 'Medan Maimun'),
+(16, '16', 'Medan Polonia'),
+(17, '17', 'Medan Baru'),
+(18, '18', 'Medan Perjuangan'),
+(19, '19', 'Medan Petisah'),
+(20, '20', 'Medan Timur'),
+(21, '21', 'Medan Selayang');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ms_kelurahan`
+--
+
+CREATE TABLE `ms_kelurahan` (
+  `id` int(11) NOT NULL,
+  `kode_kelurahan` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_kecamatan` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nama` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ms_kelurahan`
+--
+
+INSERT INTO `ms_kelurahan` (`id`, `kode_kelurahan`, `id_kecamatan`, `nama`) VALUES
+(1, '1', '1', 'Kotamatsum III'),
+(2, '2', '1', 'Mesjid'),
+(3, '3', '1', 'Pandau Hulu I'),
+(4, '4', '1', 'Pasar Baru'),
+(5, '5', '1', 'Pasar Merah Barat'),
+(6, '6', '1', 'Pusat Pasar'),
+(7, '7', '1', 'Sei Rengas I'),
+(8, '8', '1', 'Sitirejo I'),
+(9, '9', '1', 'Sudirejo I'),
+(10, '10', '1', 'Sudirejo II'),
+(11, '11', '1', 'Teladan Barat'),
+(12, '12', '1', 'Teladan Timur'),
+(13, '1', '2', 'Babura Sunggal'),
+(14, '2', '2', 'Lalang'),
+(15, '3', '2', 'Sei Sikambing B'),
+(16, '4', '2', 'Simpang Tanjung'),
+(17, '5', '2', 'Sunggal'),
+(18, '6', '2', 'Tanjung Rejo'),
+(19, '1', '3', 'Cinta Damai'),
+(20, '2', '3', 'Dwikora'),
+(21, '3', '3', 'Helvetia'),
+(22, '4', '3', 'Helvetia Tengah'),
+(23, '5', '3', 'Helvetia Timur'),
+(24, '6', '3', 'Sei Sikambing C II'),
+(25, '7', '3', 'Tanjung Gusta'),
+(26, '1', '4', 'Binjai'),
+(27, '2', '4', 'Denai'),
+(28, '3', '4', 'Medan Tenggara'),
+(29, '4', '4', 'Tegalsari Mandala I'),
+(30, '5', '4', 'Tegalsari Mandala II'),
+(31, '6', '4', 'Tegalsari Mandala III'),
+(32, '1', '5', 'Glugur Kota'),
+(33, '2', '5', 'Karang Berombak'),
+(34, '3', '5', 'Kesawan'),
+(35, '4', '5', 'Pulo Brayan Kota'),
+(36, '5', '5', 'Sei Agul'),
+(37, '6', '5', 'Silalas'),
+(38, '1', '6', 'Kota Bangun'),
+(39, '2', '6', 'Mabar'),
+(40, '3', '6', 'Mabar Hilir'),
+(41, '4', '6', 'Tanjung Mulia'),
+(42, '5', '6', 'Tanjung Mulia Hilir'),
+(43, '6', '6', 'Titi Papan'),
+(44, '1', '7', 'Baru Ladang Bambu'),
+(45, '2', '7', 'Kemenangan Tani'),
+(46, '3', '7', 'Lau Cih'),
+(47, '4', '7', 'Mangga'),
+(48, '5', '7', 'Namo Gajah'),
+(49, '6', '7', 'Sidomulyo'),
+(50, '7', '7', 'Simalingkar B'),
+(51, '8', '7', 'Simpang Selayang'),
+(52, '9', '7', 'Tanjung Selamat'),
+(53, '1', '8', 'Bagan Deli'),
+(54, '2', '8', 'Belawan Bahagia'),
+(55, '3', '8', 'Belawan Bahari'),
+(56, '4', '8', 'Belawan Sicanang'),
+(57, '5', '8', 'Belawan I'),
+(58, '6', '8', 'Belawan II'),
+(59, '1', '9', 'Amplas'),
+(60, '2', '9', 'Bangun Mulia'),
+(61, '3', '9', 'Harjosari I'),
+(62, '4', '9', 'Harjosari II'),
+(63, '5', '9', 'Sitirejo II'),
+(64, '6', '9', 'Sitirejo III'),
+(65, '7', '9', 'Timbang Deli'),
+(66, '1', '10', 'Kotamatsum I'),
+(67, '2', '10', 'Kotamatsum II'),
+(68, '3', '10', 'Kotamatsum IV'),
+(69, '4', '10', 'Tegal Sari I'),
+(70, '5', '10', 'Tegal Sari II'),
+(71, '6', '10', 'Tegal Sari III'),
+(72, '7', '10', 'Pandau Hulu II'),
+(73, '8', '10', 'Sei Rengas II'),
+(74, '9', '10', 'Sei Rengas Permata'),
+(75, '10', '10', 'Pasar Merah Timur'),
+(76, '11', '10', 'Sukaramai I'),
+(77, '12', '10', 'Sukaramai II'),
+(78, '1', '11', 'Gedung Johor'),
+(79, '2', '11', 'Kedai Durian'),
+(80, '3', '11', 'Kwala Bekala'),
+(81, '4', '11', 'Pangkalan Mansyur'),
+(82, '5', '11', 'Sukamaju'),
+(83, '6', '11', 'Titi Kuning'),
+(84, '1', '12', 'Labuhan Deli'),
+(85, '2', '12', 'Paya Pasir'),
+(86, '3', '12', 'Rengas Pulau'),
+(87, '4', '12', 'Tanah Enam Ratus'),
+(88, '5', '12', 'Terjun'),
+(89, '1', '13', 'Besar'),
+(90, '2', '13', 'Martubung'),
+(91, '3', '13', 'Nelayan Indah'),
+(92, '4', '13', 'Pekan Labuhan'),
+(93, '5', '13', 'Sei Mati'),
+(94, '6', '13', 'Tangkahan'),
+(95, '1', '14', 'Bandar Selamat'),
+(96, '2', '14', 'Bantan'),
+(97, '3', '14', 'Bantan Timur'),
+(98, '4', '14', 'Indra Kasih'),
+(99, '5', '14', 'Sidorejo'),
+(100, '6', '14', 'Sidorejo Hilir'),
+(101, '7', '14', 'Tembung'),
+(102, '1', '15', 'Aur'),
+(103, '2', '15', 'Hamdan'),
+(104, '3', '15', 'Jati'),
+(105, '4', '15', 'Kampung Baru'),
+(106, '5', '15', 'Sei Mati'),
+(107, '6', '15', 'Sukaraja'),
+(108, '1', '16', 'Anggrung'),
+(109, '2', '16', 'Madras Hulu'),
+(110, '3', '16', 'Polonia'),
+(111, '4', '16', 'Sari Rejo'),
+(112, '5', '16', 'Suka Damai'),
+(113, '1', '17', 'Babura'),
+(114, '2', '17', 'Darat'),
+(115, '3', '17', 'Merdeka'),
+(116, '4', '17', 'Padang Bulan'),
+(117, '5', '17', 'Petisah Hulu'),
+(118, '6', '17', 'Titi Rantai'),
+(119, '1', '18', 'Tegal Rejo'),
+(120, '2', '18', 'Sidorame Barat I'),
+(121, '3', '18', 'Sidorame Barat II'),
+(122, '4', '18', 'Sidorame Timur'),
+(123, '5', '18', 'Sei Kera Hilir I'),
+(124, '6', '18', 'Sei Kera Hilir II'),
+(125, '7', '18', 'Sei Kera Hulu'),
+(126, '8', '18', 'Pahlawan'),
+(127, '9', '18', 'Pandau Hilir'),
+(128, '1', '19', 'Petisah Tengah'),
+(129, '2', '19', 'Sei Putih Barat'),
+(130, '3', '19', 'Sei Putih Tengah'),
+(131, '4', '19', 'Sei Putih Timur I'),
+(132, '5', '19', 'Sei Putih Timur II'),
+(133, '6', '19', 'Sei Sikambing D'),
+(134, '7', '19', 'Sekip'),
+(135, '1', '20', 'Durian'),
+(136, '2', '20', 'Gaharu'),
+(137, '3', '20', 'Gang Buntu'),
+(138, '4', '20', 'Glugur Darat I'),
+(139, '5', '20', 'Glugur Darat II'),
+(140, '6', '20', 'Perintis'),
+(141, '7', '20', 'Pulo Brayan Bengkel'),
+(142, '8', '20', 'Pulo Brayan Bengkel Baru'),
+(143, '9', '20', 'Pulo Brayan Darat I'),
+(144, '10', '20', 'Pulo Brayan Darat II'),
+(145, '11', '20', 'Sidodadi'),
+(146, '1', '21', 'Asam Kumbang'),
+(147, '2', '21', 'Beringin'),
+(148, '3', '21', 'Padang Bulan Selayang I'),
+(149, '4', '21', 'Padang Bulan Selayang II'),
+(150, '5', '21', 'Sempakata'),
+(151, '6', '21', 'Tanjung Sari');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `produk`
+--
+
+CREATE TABLE `produk` (
+  `id` int(11) NOT NULL,
+  `id_umkm` int(11) NOT NULL,
+  `nama` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `harga` int(11) NOT NULL,
+  `kategori` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `deskripsi` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `umkm`
+--
+
+CREATE TABLE `umkm` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `nama` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `alamat` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `bidang` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nib` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `modal` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `password` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `isdelete` int(11) DEFAULT 0,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL,
+  `email_verified` int(11) DEFAULT 0,
+  `email_verified_at` date DEFAULT NULL,
+  `email_token` text COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `anggota`
+--
+ALTER TABLE `anggota`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `counter`
+--
+ALTER TABLE `counter`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ms_jenis`
+--
+ALTER TABLE `ms_jenis`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ms_kategori`
+--
+ALTER TABLE `ms_kategori`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ms_kecamatan`
+--
+ALTER TABLE `ms_kecamatan`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `produk`
+--
+ALTER TABLE `produk`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `umkm`
+--
+ALTER TABLE `umkm`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `anggota`
+--
+ALTER TABLE `anggota`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `counter`
+--
+ALTER TABLE `counter`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `ms_jenis`
+--
+ALTER TABLE `ms_jenis`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `ms_kategori`
+--
+ALTER TABLE `ms_kategori`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+
+--
+-- AUTO_INCREMENT for table `ms_kecamatan`
+--
+ALTER TABLE `ms_kecamatan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `produk`
+--
+ALTER TABLE `produk`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `umkm`
+--
+ALTER TABLE `umkm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

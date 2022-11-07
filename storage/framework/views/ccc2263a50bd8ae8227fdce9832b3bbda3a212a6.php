@@ -103,17 +103,23 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>Nomor NIB
                                     <span class="text-danger">*</span></label>
                                 <input type="text" name="nib" id="" required class="form-control"
                                     id="" value="" placeholder="Nomor NIB">
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>File NIB
                                     <span class="text-danger">*</span></label>
                                 <input type="file" name="filenib" id="" required class="form-control"
                                     id="" value="" placeholder="Nomor NIB">
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Berlaku Sampai
+                                    <span class="text-danger"></span></label>
+                                <input type="date" name="tgl_nib" class="form-control" id="tgl_nib" value=""
+                                    placeholder="No. Sertifikat Halal">
                             </div>
                         </div>
 
@@ -185,7 +191,7 @@
                             <div class="col-sm-4">
                                 <label>Berlaku Sampai
                                     <span class="text-danger"></span></label>
-                                <input type="text" name="tgl_bpom" class="form-control" id="tgl_bpom"
+                                <input type="date" name="tgl_bpom" class="form-control" id="tgl_bpom"
                                     value="" placeholder="No. Sertifikat BPOM">
                             </div>
                         </div>
@@ -207,7 +213,7 @@
                             <div class="col-sm-4">
                                 <label>Berlaku Sampai
                                     <span class="text-danger"></span></label>
-                                <input type="text" name="tgl_pirt" class="form-control" id="tgl_pirt"
+                                <input type="date" name="tgl_pirt" class="form-control" id="tgl_pirt"
                                     value="" placeholder="No. PIRT">
                             </div>
                         </div>
@@ -238,7 +244,7 @@
                             <div class="col-sm-6">
                                 <label>Sertifikat Haki
                                     <span class="text-danger"></span></label>
-                                <input type="file" name="file_haki" class="form-control" id=""
+                                <input type="file" name="filehaki" class="form-control" id=""
                                     value="" placeholder="Merek Dagang">
                             </div>
                             <div class="col-sm-6">

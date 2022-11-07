@@ -111,18 +111,24 @@
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>Nomor NIB
                                     <span class="text-danger">*</span></label>
                                 <input type="text" name="nib" id="" required class="form-control"
                                     id="" value="{{ $umkm->nib }}" placeholder="Nomor NIB">
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>File NIB
                                     <span class="text-danger">*</span></label>
                                 <input type="file" name="filenib" id="" required class="form-control"
                                     id="" placeholder="Nomor NIB">
 
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Berlaku Sampai
+                                    <span class="text-danger"></span></label>
+                                <input type="date" name="tgl_nib" class="form-control" id="tgl_nib"
+                                    value="{{ $umkm->tgl_nib }}" placeholder="No. Sertifikat Halal">
                             </div>
                         </div>
 
@@ -162,48 +168,66 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>No. Sertifikat Halal
                                     <span class="text-danger"></span></label>
                                 <input type="text" name="no_halal" class="form-control" id="no_halal"
                                     value="{{ $umkm->no_halal }}" placeholder="No. Sertifikat Halal">
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>File Sertifikat Halal
                                     <span class="text-danger"></span></label>
                                 <input type="file" name="filehalal" class="form-control" id="filehalal"
                                     value="" placeholder="Nomor Sertifikat Halal">
                             </div>
+                            <div class="col-sm-4">
+                                <label>Berlaku Sampai
+                                    <span class="text-danger"></span></label>
+                                <input type="date" name="tgl_halal" class="form-control" id="tgl_halal"
+                                    value="{{ $umkm->tgl_halal }}" placeholder="No. Sertifikat Halal">
+                            </div>
                         </div>
 
                         <div class="form-group row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>No. Sertifikat BPOM
                                     <span class="text-danger"></span></label>
                                 <input type="text" name="no_bpom" class="form-control" id="no_bpom"
                                     value="{{ $umkm->no_bpom }}" placeholder="No. Sertifikat BPOM">
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>File Sertifikat BPOM
                                     <span class="text-danger"></span></label>
                                 <input type="file" name="filebpom" class="form-control" id="filebpom"
                                     value="" placeholder="Nomor Sertifikat BPOM">
                             </div>
+                            <div class="col-sm-4">
+                                <label>Berlaku Sampai
+                                    <span class="text-danger"></span></label>
+                                <input type="date" name="tgl_bpom" class="form-control" id="tgl_bpom"
+                                    value="{{ $umkm->tgl_bpom }}" placeholder="No. Sertifikat BPOM">
+                            </div>
                         </div>
 
 
                         <div class="form-group row">
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>No. PIRT
                                     <span class="text-danger"></span></label>
                                 <input type="text" name="no_pirt" class="form-control" id="no_pirt"
                                     value="{{ $umkm->no_pirt }}" placeholder="No. PIRT">
                             </div>
-                            <div class="col-sm-6">
+                            <div class="col-sm-4">
                                 <label>File PIRT
                                     <span class="text-danger"></span></label>
                                 <input type="file" name="filepirt" class="form-control" id="filepirt"
                                     value="" placeholder="Nomor PIRT">
+                            </div>
+                            <div class="col-sm-4">
+                                <label>Berlaku Sampai
+                                    <span class="text-danger"></span></label>
+                                <input type="date" name="tgl_pirt" class="form-control" id="tgl_pirt"
+                                    value="{{ $umkm->tgl_pirt }}" placeholder="No. PIRT">
                             </div>
                         </div>
 
@@ -224,6 +248,22 @@
                                     <span class="text-danger"></span></label>
                                 <input type="text" name="hak_cipta" class="form-control" id=""
                                     value="{{ $umkm->hak_cipta }}" placeholder="Hak Cipta">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+
+                            <div class="col-sm-6">
+                                <label>Sertifikat Haki
+                                    <span class="text-danger"></span></label>
+                                <input type="file" name="filehaki" class="form-control" id=""
+                                    value="" placeholder="Merek Dagang">
+                            </div>
+                            <div class="col-sm-6">
+                                <label>Berlaku Sampai
+                                    <span class="text-danger"></span></label>
+                                <input type="date" name="tgl_haki" class="form-control" id=""
+                                    value="{{ $umkm->tgl_haki }}" placeholder="Hak Cipta">
                             </div>
                         </div>
 

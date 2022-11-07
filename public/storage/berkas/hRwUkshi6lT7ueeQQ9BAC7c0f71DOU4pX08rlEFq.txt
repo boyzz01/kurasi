@@ -1,0 +1,104 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Nov 01, 2022 at 07:32 AM
+-- Server version: 10.5.13-MariaDB-cll-lve
+-- PHP Version: 7.2.34
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `u559870473_plut`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `umkm`
+--
+
+CREATE TABLE `umkm` (
+  `id` int(11) NOT NULL,
+  `kode_umkm` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `total` int(11) NOT NULL DEFAULT 0,
+  `nama` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `kode_kota` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `nib` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `foto` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `pemilik` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `alamat_pemilik` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `jk` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `ttl` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `nohp` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `noktp` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `alamat_umkm` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `jenis_produk` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `deskripsi_produk` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `no_halal` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `no_bpom` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `no_pirt` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `merek_dagang` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `hak_cipta` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `email` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `fb` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `instagram` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `landing_page` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `shopee` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `tokopedia` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `lain` text COLLATE utf8mb4_unicode_ci DEFAULT '',
+  `nilai_asset` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `omset` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `karyawan` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `tiktok` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `youtube` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sosmedlain` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lpse` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mbiz` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `created_at` date NOT NULL,
+  `updated_at` date NOT NULL,
+  `deleted` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `umkm`
+--
+
+INSERT INTO `umkm` (`id`, `kode_umkm`, `total`, `nama`, `kode_kota`, `nib`, `foto`, `pemilik`, `alamat_pemilik`, `jk`, `ttl`, `nohp`, `noktp`, `alamat_umkm`, `jenis_produk`, `deskripsi_produk`, `no_halal`, `no_bpom`, `no_pirt`, `merek_dagang`, `hak_cipta`, `email`, `fb`, `instagram`, `landing_page`, `shopee`, `tokopedia`, `lain`, `nilai_asset`, `omset`, `karyawan`, `tiktok`, `youtube`, `sosmedlain`, `lpse`, `mbiz`, `created_at`, `updated_at`, `deleted`) VALUES
+(1, '0001', 1, 'KYTa', '01', '9120105411326', 'https://ardisahputra.me/plut/storage/app/foto/EtAVRpbJJ7Fr5oWpJ4iUWmcQX9s5GSjlmCO0RSi4.jpg', 'Dame Maria Manurung', 'Jl. Basuki Kel. Cilangkap Kec. Cipayung Jakarta Utara', 'Perempuan', 'Porsea, 07/10/1976', '085370626383', '1271144710760001', 'Jl. Dwikora No.29 Medan', 'Rempah', 'Serbuk Jahe Merah, Temulawak dan Kunyit yang diolah secara alami tanpa bahan pengawet serta dengan gula asli. Memiliki banyak khasiat untuk kesehatan, tidak memiliki ampas dan aman untuk dikonsumsi.', '12110000032711120', NULL, '51327501062523', NULL, NULL, 'dmaria.manurung@gmail.com', 'KYTa.go.id', 'kyta.go.id', 'www jahemerahkyta.com', 'kyta.go.id', 'kyta.go.id', NULL, '50000000', '200000000', '4', NULL, NULL, NULL, NULL, NULL, '2022-06-02', '2022-06-02', 0),
+(2, '0002', 15, 'Bakkara Collection', '01', '9120404881255', '', 'Tresia Bakkara', 'Jl. Karya Wisata Gg Karya Medan', 'Perempuan', 'Medan, 20/11/1969', '085275090012', '1271116011690004', 'Jl Karya Wisata Gg Karya', 'Craft & Fashion', 'Produk turunan Wastra batik dan ulos', NULL, NULL, NULL, NULL, NULL, 'bakkaracollection@gmail.com', 'bakkaracollection', 'bakkaracollection', NULL, 'bakkaracollection', 'bakkaracollection', NULL, '300000000', '300000000', '3', 'bakkaracollection', 'bakkaracollection', NULL, NULL, NULL, '2022-10-19', '2022-10-19', 0),
+(3, '0003', 2, 'Sabina Collection', '01', '55687418', 'https://ardisahputra.me/plut/storage/app/foto/s0AmmM8ms0EWns45gJEV4yEwUyibkX3YqcZ1gVnq.jpg', 'Sri Dewiyana', 'Jl. Helvetia ujung No. 5', 'Perempuan', 'medan, 07/10/1975', '08527456682', '12711589807775', 'Jl. Helvetia ujung no 5', 'tas', 'produk kreasi kain goni dan ulos', NULL, NULL, NULL, NULL, NULL, 'sabinacollection@gmail.com', 'sabinacollection', 'sabinacollection', NULL, 'sabinacollection', 'sabinacollection', NULL, '300000000', '350000000', '6', NULL, NULL, NULL, NULL, NULL, '2022-10-19', '2022-10-19', 0);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `umkm`
+--
+ALTER TABLE `umkm`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `umkm`
+--
+ALTER TABLE `umkm`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

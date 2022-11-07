@@ -177,7 +177,7 @@
                         </div>
                     </div>
                 </div>
-                <div>
+                <div style="margin: 20px">
                     @include('alert')
                 </div>
 
@@ -404,33 +404,66 @@
                     reset();
                     document.getElementById("filehalal").required = true;
                     document.getElementById("no_halal").required = true;
+                    document.getElementById("tgl_halal").required = true;
                 } else if (pil == 5) {
                     reset();
                     document.getElementById("filebpom").required = true;
                     document.getElementById("no_bpom").required = true;
+                    document.getElementById("tgl_bpom").required = true;
                 } else if (pil == 6) {
                     reset();
                     document.getElementById("filebpom").required = true;
                     document.getElementById("no_bpom").required = true;
+                    document.getElementById("tgl_bpom").required = true;
                 } else if (pil == 7) {
                     reset();
                     document.getElementById("filepirt").required = true;
                     document.getElementById("no_pirt").required = true;
+                    document.getElementById("tgl_pirt").required = true;
                 } else if (pil == 8) {
                     reset();
                     document.getElementById("filepirt").required = true;
                     document.getElementById("no_pirt").required = true;
+                    document.getElementById("tgl_pirt").required = true;
                 }
             }
 
             function reset() {
                 document.getElementById("filehalal").required = false;
                 document.getElementById("no_halal").required = false;
+                document.getElementById("tgl_halal").required = true;
                 document.getElementById("filebpom").required = false;
                 document.getElementById("no_bpom").required = false;
+                document.getElementById("tgl_bpom").required = true;
                 document.getElementById("filepirt").required = false;
                 document.getElementById("no_pirt").required = false;
+                document.getElementById("tgl_pirt").required = true;
             }
+
+            $(document).on('click', '.tolak_btn', function() {
+
+                var id = $(this).attr('id');
+                $('#tolakModal').modal('show')
+
+
+                //  console.log(id);
+                $('#idumkm').val(id);
+
+
+
+            });
+
+            $(document).on('click', '.terima_btn', function() {
+
+                var id = $(this).attr('id');
+                $('#terimaModal').modal('show')
+                //  console.log(id);
+                $('#idterima').val(id);
+
+
+
+            });
+
 
         })
     </script>

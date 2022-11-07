@@ -49,8 +49,14 @@ class Umkm extends Model
         'file_bpom',
         'file_pirt',
         'file_halal',
+        'file_haki',
+        'tgl_nib',
+        'tgl_bpom',
+        'tgl_pirt',
+        'tgl_halal',
+        'tgl_haki',
         'tempat',
-        'tanggal'
+        'tanggal','catatan'
     
     ];
 
