@@ -27,6 +27,7 @@ Route::post('/add', [DashboardController::class,'addumkm'] )->name('add.umkm');
 Route::get('/', [DashboardController::class,'index'] )->name('home')->middleware('auth');
 Route::get('/tambahumkm', [DashboardController::class,'add'] )->name('tambah')->middleware('auth');
 Route::get('editdata/{id}', [DashboardController::class,'editview'] )->name('editdata')->middleware('auth');
+Route::get('detail/{id}', [DashboardController::class,'detail'] )->name('detail')->middleware('auth');
 
 Route::post('/terima', [DashboardController::class,'terima'] )->name('terima.umkm')->middleware('auth');
 Route::post('/tolak', [DashboardController::class,'tolak'] )->name('tolak.umkm')->middleware('auth');

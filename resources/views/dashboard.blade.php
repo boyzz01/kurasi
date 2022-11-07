@@ -264,6 +264,12 @@
                                     <td nowrap="nowrap">
 
                                         @if (Auth::guard()->user()->level == 1)
+                                            <a href="{{ route('detail', $d->id) }}"
+                                                class="btn btn-sm btn-primary btn-icon" id="{{ $d->id }}"
+                                                title=" Detail Data ">
+                                                <i class="flaticon-file-2"></i>
+                                            </a>
+
                                             <a class="btn btn-sm btn-success btn-icon terima_btn"
                                                 id="{{ $d->id }}" title=" Edit Data ">
                                                 <i class=" fas fa-check-circle"></i>

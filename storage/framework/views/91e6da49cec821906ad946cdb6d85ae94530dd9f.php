@@ -266,6 +266,12 @@
                                     <td nowrap="nowrap">
 
                                         <?php if(Auth::guard()->user()->level == 1): ?>
+                                            <a href="<?php echo e(route('detail', $d->id)); ?>"
+                                                class="btn btn-sm btn-primary btn-icon" id="<?php echo e($d->id); ?>"
+                                                title=" Detail Data ">
+                                                <i class="flaticon-file-2"></i>
+                                            </a>
+
                                             <a class="btn btn-sm btn-success btn-icon terima_btn"
                                                 id="<?php echo e($d->id); ?>" title=" Edit Data ">
                                                 <i class=" fas fa-check-circle"></i>

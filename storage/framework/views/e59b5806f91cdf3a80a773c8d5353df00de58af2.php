@@ -177,7 +177,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="margin: 10px">
+                <div style="margin: 20px">
                     <?php echo $__env->make('alert', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                 </div>
 

@@ -40,7 +40,7 @@ class DashboardController extends Controller
             $jenis = DB::table('ms_jenis')->get();
             return view('tambah',['jenis'=>$jenis]);
         }else{
-            return redirect()->route('/');
+            return redirect()->route('home');
          }
 
      //   echo asset('storage/app/5/yoOPOR8scE8BNIjAwDCt0YxDeDxDWBMaz4SxFkOr.txt');
@@ -53,12 +53,25 @@ class DashboardController extends Controller
             $umkm = DB::table("umkm")->where('id',$id)->first();
             return view('edit',['jenis'=>$jenis,'umkm'=>$umkm]);
         }else{
-            return redirect()->route('/');
+            return redirect()->route('home');
         }
 
      //   echo asset('storage/app/5/yoOPOR8scE8BNIjAwDCt0YxDeDxDWBMaz4SxFkOr.txt');
     }
 
+    
+    public function detail($id){
+        if (Auth::guard()->user()->level == 1)
+        {
+            $jenis = DB::table('ms_jenis')->get();
+            $umkm = DB::table("umkm")->where('id',$id)->first();
+            return view('detail',['jenis'=>$jenis,'umkm'=>$umkm]);
+        }else{
+            return redirect()->route('home');
+        }
+
+     //   echo asset('storage/app/5/yoOPOR8scE8BNIjAwDCt0YxDeDxDWBMaz4SxFkOr.txt');
+    }
 
     public function addumkm(Request $request){
 
@@ -111,7 +124,7 @@ class DashboardController extends Controller
             Umkm::create($request->all());
             return redirect()->back()->with('success', 'Data berhasil ditambah');
         }else{
-            return redirect()->route('/');
+            return redirect()->route('home');
         }
     }
 
